@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="administrarEnfermedadesAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.AdministrarEnfermedadesController">
+   <children>
+      <VBox  alignment="TOP_CENTER" prefHeight="400.0" prefWidth="250.0" style="-fx-background-color: #F44336;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Enfermedades " textAlignment="CENTER" textFill="#eeebeb" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <ListView fx:id="enfermedadesListView" onMouseClicked="#enfermedadSeleccionada" prefHeight="200.0" prefWidth="210.0" />
+            <ProgressIndicator fx:id="administrarEnfermedadesProgressIndicator" prefHeight="50.0">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </ProgressIndicator>
+            <Button fx:id="volverAdministrarAnimalesButton" mnemonicParsing="false" onAction="#launchAdministrarAnimalesView" text="Volver">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Button>
+            
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+      <AnchorPane layoutX="294.0" layoutY="52.0" prefHeight="400.0" prefWidth="450.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="14.0" layoutY="36.0" text="Edicion enfermedad" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ToolBar layoutX="107.0" layoutY="537.0" prefHeight="80.0" prefWidth="180.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+              <items>
+                <ToggleButton fx:id="agregarEnfermedadButton"  mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Agregar Enfermedad" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="guardarButton" onAction="#guardarEnfermedad" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Guardar" />
+                  <Button fx:id="eliminarButton" onAction="#eliminarEnfermedad" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Eliminar" />
+                  <Button fx:id="eliminarEnfermedadesButton" onAction="#eliminarTodasLasEnfermedades" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Eliminar Enfermedades" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+              </items>
+            </ToolBar>
+            <GridPane vgap="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="60.0">
+               <children>
+                  <Label text="Descripcion" GridPane.rowIndex="2" />
+                  <Label text="Ovservaciones" GridPane.rowIndex="4" />
+                  <TextArea fx:id="descripcionTextArea" prefHeight="57.0" prefWidth="232.0" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="2" />
+                  <TextArea fx:id="observacionesTextArea" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.rowSpan="2" />
+                  <RadioButton fx:id="enfermedadAnteriorRadioButton" mnemonicParsing="false" text="Enfermedad anterior" GridPane.rowIndex="1" />
+                  <RadioButton fx:id="enfermedadCronicaRadioButton" mnemonicParsing="false" text="Cronica" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label prefHeight="15.0" prefWidth="191.0" text="Tipo" GridPane.columnSpan="2" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="250.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

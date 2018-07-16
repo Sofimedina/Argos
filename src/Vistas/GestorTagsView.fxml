@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.GestorTagsController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="300.0" style="-fx-background-color: #F44336;">
+         <children>
+            <AnchorPane prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Circle fx:id="estadoArduinoCircle" fill="GREY" layoutX="36.0" layoutY="30.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="70.0" />
+                  <Label layoutX="117.0" layoutY="24.0" text="Argos Tag RW" textFill="WHITE" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="30.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="estadoArduinoLabel" layoutX="117.0" layoutY="56.0" text="Estado:" textFill="WHITE" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="54.0" />
+                  <Label fx:id="puertoLabel" layoutX="104.0" layoutY="89.0" text="Puerto:" textFill="WHITE" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="77.0" />
+                  <ComboBox fx:id="puertosComboBox" layoutX="90.0" layoutY="93.0" prefHeight="26.0" prefWidth="157.0" promptText="Puertos" AnchorPane.topAnchor="100.0" />
+                  <Button fx:id="cambiarPuertoButton" layoutX="90.0" layoutY="131.0" mnemonicParsing="false" onAction="#cambiarPuerto" prefHeight="26.0" prefWidth="157.0" text="Cambiar puerto" AnchorPane.topAnchor="135.0" />
+               </children>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Circle fx:id="tagInfoCircle" fill="#7c8a97" layoutX="36.0" layoutY="30.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="30.0" />
+                  <Label layoutX="117.0" layoutY="24.0" text="Tag Info" textFill="WHITE" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="30.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tagInfoLabel" layoutX="117.0" layoutY="56.0" text="No se detecto ningun tag" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="54.0" />
+               </children>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Circle fx:id="resultadoCircle" fill="#7c8a97" layoutX="36.0" layoutY="30.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="30.0" />
+                  <Label layoutX="117.0" layoutY="24.0" text="Resultado" textFill="WHITE" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="30.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="resultadoLabel" layoutX="117.0" layoutY="56.0" text="No se selecciono ninguna operacion" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="54.0" />
+               </children>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <AnchorPane layoutX="300.0" prefHeight="600.0" prefWidth="400.0" AnchorPane.leftAnchor="300.0">
+         <children>
+            <MenuButton fx:id="menuButton" layoutX="284.0" layoutY="2.0" mnemonicParsing="false" text="+Opciones" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <MenuItem fx:id="administrarAnimalesMenuItem" mnemonicParsing="false" onAction="#launchAdministrarAnimalesView" text="Administrar animales" />
+                <MenuItem fx:id="modificarPerfiItem" mnemonicParsing="false" onAction="#launchAdministrarPerfilView" text="Modificar perfil" />
+                  <MenuItem fx:id="aboutArgosItem" mnemonicParsing="false" onAction="#launchAcercaDeArgos" text="Acerca de Argos" />
+                  <MenuItem fx:id="salirItem" mnemonicParsing="false" onAction="#volverAlLogin" text="Salir" />
+              </items>
+            </MenuButton>
+            <ToolBar layoutX="27.0" layoutY="463.0" prefHeight="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="27.0">
+              <items>
+                <Button fx:id="leetTagButton" mnemonicParsing="false" onAction="#leetTag" prefWidth="80.0" text="Leer" />
+                  <Button fx:id="editarTagButton" mnemonicParsing="false" onAction="#editarTag" prefWidth="80.0" text="Editar" />
+                  <Button fx:id="guardarTagButton" mnemonicParsing="false" onAction="#guardarTag" prefWidth="80.0" text="Guardar" />
+                  <Button fx:id="borrarTagButton" mnemonicParsing="false" onAction="#eliminarTag" prefWidth="80.0" text="Borrar" />
+              </items>
+            </ToolBar>
+            <GridPane layoutX="208.0" layoutY="63.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="40.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="ID Argos" GridPane.rowIndex="2" />
+                  <TextField fx:id="idArgosTextField" disable="true" prefHeight="20.0" GridPane.rowIndex="3" />
+                  <Label text="Nombre" GridPane.rowIndex="4" />
+                  <TextField fx:id="nombreTextField" GridPane.rowIndex="5" />
+                  <Label text="Dueño" GridPane.rowIndex="6" />
+                  <TextField fx:id="dueñoTextField" GridPane.rowIndex="7" />
+                  <Label text="Email" GridPane.rowIndex="8" />
+                  <TextField fx:id="emailTextField" GridPane.rowIndex="9" />
+                  <Label text="Telefono Fijo" GridPane.rowIndex="10" />
+                  <TextField fx:id="telefonoTextField" GridPane.rowIndex="11" />
+                  <Label text="Direccion" GridPane.rowIndex="12" />
+                  <TextField fx:id="direccionTextField" GridPane.rowIndex="13" />
+                  <Label text="Cordenadas" GridPane.rowIndex="14" />
+                  <TextField fx:id="cordenadasTextField" GridPane.rowIndex="15" />
+                  <ComboBox fx:id="listaAnimalesComboBox" prefHeight="25.0" prefWidth="312.0" GridPane.rowIndex="1" />
+                  <Label text="Seleccionar animal" />
+               </children>
+            </GridPane>
+            <Button fx:id="ampliarInfoAnimalButton" layoutX="340.0" layoutY="131.0" mnemonicParsing="false" onAction="#launchInfoAnimalView" text="+" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="133.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
