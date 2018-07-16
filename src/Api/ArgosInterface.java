@@ -22,6 +22,8 @@ public interface ArgosInterface {
     //ANIMALES
     @GET("animales")
     Call<Animales> getAnimales(@Header("Authorization") String claveApi);
+    @GET("animales/{idAnimal}")
+    Call<Animal> getAnimal(@Header("Authorization") String claveApi,@Path("idAnimal") String idAnimal);
     @POST("animales")
     Call<ApiRespuesta> agregarAnimal(@Header("Authorization") String claveApi,@Body Animal animal);
     @PUT("animales/{idAnimal}")
@@ -59,4 +61,7 @@ public interface ArgosInterface {
     @DELETE("enfermedades/{idAnimal}")
     Call<ApiRespuesta> eliminarTodasLasEnfermedades(@Header("Authorization") String claveApi,@Path("idAnimal") String idAnimal);
 
+    //INFO DETALLADA
+    @GET("infoDetallada/{idAnimal}")
+    Call<InfoDetallada> getInfoDetallada(@Header("Authorization") String claveApi,@Path("idAnimal") String idAnimal);
 }

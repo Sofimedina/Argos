@@ -437,16 +437,5 @@ public class AdministrarEnfermedadesController implements Initializable {
         AdministrarAnimalesStage.show();
     }
 
-       /*
-     Runnable runnable=()->{
-                        Platform.runLater(new Runnable() {
-                            @Override
-                            public void run() {
 
-                            }
-                        });
-                    };
-                    Thread thread=new Thread(runnable);
-                    thread.start();
-     */
 }

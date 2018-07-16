@@ -2,33 +2,132 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox fx:controller="Controladores.InfoAnimalController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" spacing="10.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" style="-fx-background-color: #F44336;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.InfoAnimalController">
    <children>
-      <Label fx:id="idLabel" text="Id Argos" />
-      <Label fx:id="nombreLabel" text="Nombre del dueño" />
-      <Label fx:id="emailLabel" text="Email" />
-      <Label fx:id="telefonoLabel" text="Telefono fijo" />
-      <Label fx:id="celularLabel" text="Telefono celular" />
-      <Label fx:id="cordenadasLabel" text="Cordenadas " />
-      <Label fx:id="direccionLabel" text="Direccion" />
-      <Label fx:id="nombreAnimalLabel" text="Nombre animal" />
-      <Label fx:id="especieLabel" text="Especie" />
-      <Label fx:id="razaLabel" text="Raza" />
-      <ComboBox fx:id="vacunasComboBox" prefHeight="25.0" prefWidth="300.0" promptText="Vacunas" />
-      <ComboBox fx:id="enfermedadesComboBox" prefWidth="300.0" promptText="Enfermedades" />
-      <ComboBox fx:id="cirujiasComboBox" prefWidth="300.0" promptText="Cirujias" />
-      <Label fx:id="animalCallejeroLabel" text="Animal callejero" />
-      <Label fx:id="edadLabel" text="Edad" />
-      <Label fx:id="sexoLabel" text="Sexo" />
-      <Label fx:id="pesoLabel" text="Peso" />
-      <Label fx:id="desparasitadoLabel" text="Desparasitado" />
+      <ProgressIndicator fx:id="infoAnimalProgressIndicator">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </ProgressIndicator>
+      <GridPane hgap="10.0" style="-fx-background-color: #F44336;" vgap="10.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="200.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox GridPane.rowSpan="2">
+               <children>
+                  <Label text="Info Usuario" textFill="#f8f4f4">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nombreLabel" text="Nombre del dueño" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="emailLabel" text="Email" textFill="WHITE" />
+                  <Label fx:id="cordenadasLabel" text="Cordenadas " textFill="WHITE" />
+                  <Label fx:id="telefonoLabel" text="Telefono fijo" textFill="WHITE" />
+                  <Label fx:id="celularLabel" text="Telefono celular" textFill="WHITE" />
+                  <Label fx:id="direccionLabel" text="Direccion" textFill="WHITE" wrapText="true" />
+               </children>
+            </VBox>
+            <VBox GridPane.columnIndex="1">
+               <children>
+                  <Label text="Info animal" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nombreAnimalLabel" text="Nombre animal" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="especieLabel" text="Especie" textFill="WHITE" />
+                  <Label fx:id="razaLabel" text="Raza" textFill="WHITE" />
+                  <Label fx:id="añosLabel" text="Años" textFill="WHITE" />
+                  <Label fx:id="mesesLabel" text="Meses" textFill="WHITE" />
+                  <Label fx:id="sexoLabel" text="Sexo" textFill="WHITE" />
+                  <Label fx:id="pesoLabel" text="Peso" textFill="WHITE" />
+                  <Label fx:id="animalCallejeroLabel" text="Animal callejero" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="desparasitadoLabel" text="Desparasitado" textFill="WHITE" />
+               </children>
+            </VBox>
+            <VBox GridPane.columnIndex="2">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Vacunas" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="vacunasListView">
+                           <VBox.margin>
+                              <Insets left="5.0" right="5.0" top="10.0" />
+                           </VBox.margin>
+                        </ListView>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #F44336;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label text="Enfermedades" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="enfermedadesListView" prefHeight="200.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" top="10.0" />
+                     </VBox.margin>
+                  </ListView>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <Label text="Cirugias" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="cirugiasListView" prefHeight="200.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" top="10.0" />
+                     </VBox.margin>
+                  </ListView>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </GridPane>
       <Button fx:id="volverAlGestorTagsButton" mnemonicParsing="false" onAction="#launchGestorTagsView" prefWidth="200.0" text="Volver">
          <VBox.margin>
-            <Insets left="80.0" right="100.0" top="10.0" />
+            <Insets bottom="20.0" top="10.0" />
          </VBox.margin>
       </Button>
    </children>
