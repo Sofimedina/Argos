@@ -148,27 +148,32 @@ public class InfoAnimalController implements Initializable {
                                     }
                                     enfermedadesListView.setItems(enfermedadesObservableList);
                                 }
-
-                                if (Integer.valueOf(infoDetallada.getAnimalCallejero())==1){
-                                    animalCallejeroLabel.setText(BASE_ANIMAL_CALLEJERO+"Si");
-                                }else{
-                                    if (Integer.valueOf(infoDetallada.getAnimalCallejero())==0){
-                                        animalCallejeroLabel.setText(BASE_ANIMAL_CALLEJERO+"No");
+                                if (infoDetallada.getAnimalCallejero()!=null){
+                                    if (Integer.valueOf(infoDetallada.getAnimalCallejero())==1){
+                                        animalCallejeroLabel.setText(BASE_ANIMAL_CALLEJERO+"Si");
+                                    }else{
+                                        if (Integer.valueOf(infoDetallada.getAnimalCallejero())==0){
+                                            animalCallejeroLabel.setText(BASE_ANIMAL_CALLEJERO+"No");
+                                        }
                                     }
                                 }
+
                                 añosLabel.setText(BASE_AÑOS+infoDetallada.getAños());
                                 mesesLabel.setText(BASE_MESES+infoDetallada.getMeses());
                                 sexoLabel.setText(BASE_SEXO+infoDetallada.getSexo());
-                                Double peso=Double.parseDouble(infoDetallada.getPeso());
-                                pesoLabel.setText(BASE_PESO+String.format("%.2f",peso));
-                                if (Integer.valueOf(infoDetallada.getDesparasitado())==1){
-                                    desparasitadoLabel.setText(BASE_DESPARASITADO+"Si");
-                                }else{
-                                    if (Integer.valueOf(infoDetallada.getDesparasitado())==0){
-                                        desparasitadoLabel.setText(BASE_DESPARASITADO+"No");
+                                if (infoDetallada.getPeso()!=null){
+                                    Double peso=Double.parseDouble(infoDetallada.getPeso());
+                                    pesoLabel.setText(BASE_PESO+String.format("%.2f",peso));
+                                }
+                                if (infoDetallada.getDesparasitado()!=null){
+                                    if (Integer.valueOf(infoDetallada.getDesparasitado())==1){
+                                        desparasitadoLabel.setText(BASE_DESPARASITADO+"Si");
+                                    }else{
+                                        if (Integer.valueOf(infoDetallada.getDesparasitado())==0){
+                                            desparasitadoLabel.setText(BASE_DESPARASITADO+"No");
+                                        }
                                     }
                                 }
-
 
                             }
                             infoAnimalProgressIndicator.setVisible(false);
