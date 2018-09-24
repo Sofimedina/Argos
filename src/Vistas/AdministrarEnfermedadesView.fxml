@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="administrarEnfermedadesAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.AdministrarEnfermedadesController">
+<AnchorPane fx:id="administrarEnfermedadesAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.AdministrarEnfermedadesController">
    <children>
       <VBox  alignment="TOP_CENTER" prefHeight="400.0" prefWidth="250.0" style="-fx-background-color: #F44336;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
