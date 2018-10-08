@@ -17,9 +17,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="administrarVacunasAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.AdministrarVacunasController">
+<AnchorPane fx:id="administrarVacunasAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.AdministrarVacunasController">
    <children>
-      <VBox fx:id="admAnimalesAnchorPane" alignment="TOP_CENTER" prefHeight="400.0" prefWidth="250.0" style="-fx-background-color: #F44336;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox fx:id="admAnimalesAnchorPane" alignment="TOP_CENTER" prefHeight="400.0" prefWidth="250.0" style="-fx-background-color: #F44336;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label text="Vacunas registradas" textFill="#eeebeb">
                <font>
@@ -46,19 +46,25 @@
             <Insets left="20.0" right="20.0" top="20.0" />
          </padding>
       </VBox>
-      <AnchorPane layoutX="294.0" layoutY="52.0" prefHeight="400.0" prefWidth="450.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="294.0" layoutY="52.0" prefHeight="400.0" prefWidth="450.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label layoutX="14.0" layoutY="36.0" text="Edicion Vacuna" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <ToolBar layoutX="107.0" layoutY="537.0" prefHeight="80.0" prefWidth="180.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+            <ToolBar layoutX="107.0" layoutY="537.0" prefHeight="80.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
               <items>
-                <ToggleButton fx:id="nuevaVacunaButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Nueva Vacuna" textAlignment="CENTER" wrapText="true" />
+                <ToggleButton fx:id="nuevaVacunaButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Nueva Vacuna" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></ToggleButton>
                   <Button fx:id="guardarButton" mnemonicParsing="false" onAction="#guardarVacuna" prefHeight="50.0" prefWidth="100.0" text="Guardar" />
-                 <Button fx:id="eliminarButton" onAction="#eliminarVacuna" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Eliminar" textAlignment="CENTER" wrapText="true" />
-                 <Button fx:id="eliminarVacunasButton" mnemonicParsing="false" onAction="#eliminarVacunasRegistradas" prefHeight="50.0" prefWidth="100.0" text="Eliminar Vacunas" textAlignment="CENTER" wrapText="true" />
+                 <Button fx:id="eliminarButton" mnemonicParsing="false" onAction="#eliminarVacuna" prefHeight="50.0" prefWidth="100.0" text="Eliminar" textAlignment="CENTER" wrapText="true" />
+                 <Button fx:id="eliminarVacunasButton" mnemonicParsing="false" onAction="#eliminarVacunasRegistradas" prefHeight="50.0" prefWidth="100.0" text="Eliminar Vacunas" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
               </items>
             </ToolBar>
             <GridPane vgap="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="60.0">

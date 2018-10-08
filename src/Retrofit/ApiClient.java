@@ -6,9 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
         //TODO REVISAR IP
-        //public static String DOMINIO="192.168.1.17";
-        //public static String DOMINIO="192.168.43.87";
-        public static String DOMINIO="sofiserver";
+        public static String DOMINIO="argosserver";
         public static String BASE_URL="http://"+DOMINIO +"/api.argos.com/v1/";
         public static Retrofit retrofit=null;
 
